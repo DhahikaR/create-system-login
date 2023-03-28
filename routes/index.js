@@ -1,5 +1,11 @@
 import express from "express";
-import { getUsers, Register, Login, Logout } from "../controllers/users.js";
+import {
+  getUsers,
+  Register,
+  Login,
+  Logout,
+  getUserId,
+} from "../controllers/users.js";
 
 // import { verifyToken } from "../middleware/verifyToken.js";
 import { refreshToken } from "../controllers/refreshToken.js";
@@ -10,6 +16,7 @@ router.get("/users", getUsers);
 router.post("/users", Register);
 router.post("/login", Login);
 router.get("/token", refreshToken);
+router.get("/users", getUserId);
 router.delete("/logout", Logout);
 
 export default router;

@@ -1,6 +1,7 @@
 import Users from "../models/UserModel.js";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
+import { json } from "sequelize";
 
 export const getUsers = async (req, res) => {
   try {
@@ -10,6 +11,19 @@ export const getUsers = async (req, res) => {
     res.json(users);
   } catch (error) {
     console.log(error);
+  }
+};
+
+export const getUserId = async (req, res) => {
+  try {
+    const response = await Users.findOne({
+      where: {
+        id: req.params.id,
+      },
+    });
+    res.status(200).json(response);
+  } catch (error) {
+    res.status(500), json({ msg: error.users });
   }
 };
 
