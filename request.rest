@@ -1,0 +1,29 @@
+GET http://localhost:5000/users
+Authorization: Bearer
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsIm5hbWUiOiJyb25pIiwiZW1haWwiOiJyb25pQGdtYWlsLmNvbSIsImlhdCI6MTY4MDAxMTEwMCwiZXhwIjoxNjgwMDk3NTAwfQ.aJ-SA1Uqjlto5aDh12rbKZODcYINPg6S6Vy_3uv_sOQ
+
+###
+POST  http://localhost:5000/users
+Content-Type: application/json
+
+{
+    "name": "roni",
+    "email": "roni@gmail.com",
+    "password": "654321",
+    "confirmPassword": "654321"
+}
+
+###
+POST  http://localhost:5000/login
+Content-Type: application/json
+
+{
+    "email" : "roni@gmail.com",
+    "password": "654321"
+}
+
+###
+GET http://localhost:5000/token
+
+###
+DELETE  http://localhost:5000/logout
