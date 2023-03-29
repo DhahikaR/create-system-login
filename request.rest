@@ -1,13 +1,13 @@
 GET http://localhost:5000/users
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjYsIm5hbWUiOiJiZW50b3MiLCJlbWFpbCI6ImJlbnRvc0BnbWFpbC5jb20iLCJpYXQiOjE2ODAwMTE1NjgsImV4cCI6MTY4MDA5Nzk2OH0.uYbSy6fmHYSbVz5BXirWdU7vdU9TA9xofR5O_kxPONY
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsIm5hbWUiOiJyb25pIiwiZW1haWwiOiJyb25pQGdtYWlsLmNvbSIsImlhdCI6MTY4MDA3NDUwMiwiZXhwIjoxNjgwMDc0NTIyfQ.cLegCtlzrkzg3XJ3tn37UIgond4fZxRGNdFAW53obkw
 
 ###
 POST  http://localhost:5000/users
 Content-Type: application/json
 
 {
-    "name": "bentos",
-    "email": "bentos@gmail.com",
+    "name": "roni",
+    "email": "roni@gmail.com",
     "password": "12345678",
     "confirmPassword": "12345678"
 }
@@ -17,8 +17,8 @@ POST  http://localhost:5000/login
 Content-Type: application/json
 
 {
-    "email" : "bentos@gmail.com",
-    "password": "12345678"
+    "email" : "roni@gmail.com",
+    "password": "654321"
 }
 
 ###
@@ -27,5 +27,3 @@ GET http://localhost:5000/token
 ###
 DELETE  http://localhost:5000/logout
 
-###
-GET http://localhost:5000/users/:5

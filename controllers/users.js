@@ -63,7 +63,7 @@ export const Login = async (req, res) => {
       { userId, name, email },
       process.env.ACCESS_TOKEN_SECRET,
       {
-        expiresIn: "1d",
+        expiresIn: "20s",
       }
     );
     const refreshToken = jwt.sign(
@@ -92,7 +92,7 @@ export const Login = async (req, res) => {
 };
 
 export const Logout = async (req, res) => {
-  const refreshToken = req.cookie.refreshToken;
+  const refreshToken = req.cookies.refreshToken;
   if (!refreshToken) return res.sendStatus(204);
   const user = await Users.findAll({
     where: {
