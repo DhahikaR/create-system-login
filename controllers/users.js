@@ -34,6 +34,7 @@ export const updateUserById = async (req, res) => {
       id: req.params.id,
     },
   });
+  // Validasi user
   if (!user) return res.status(404).json({ msg: "User Not Found" });
   const { name, email, phone_number } = req.body;
   try {
