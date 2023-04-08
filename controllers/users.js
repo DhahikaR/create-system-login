@@ -27,6 +27,52 @@ export const getUserById = async (req, res) => {
   }
 };
 
+export const updateUserId = async (req, res) => {
+  const user = await Users.findOne({
+    where: {
+      id: req.params.id,
+    },
+  });
+  if (!user) return res.status(404).json({ msg: "User Not Found" });
+  const { name, email, phone_number } = req.body;
+  try {
+    await Users.update(
+      {
+        name: name,
+        email: email,
+        phone_number: phone_number,
+      },
+      {
+        where: {
+          id: user.id,
+        },
+      }
+    );
+    res.status(200).json({ msg: "User Upadeted" });
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const deleteUser = async (req, res) => {
+  const user = await Users.findOne({
+    where: {
+      id: req.params.id,
+    },
+  });
+  if (!user) return res.status(404).json({ msg: "User Not Found" });
+  try {
+    await Users.destroy({
+      where: {
+        id: user.id,
+      },
+    });
+    res.status(200).json({ msg: "User Deleted" });
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 export const Register = async (req, res) => {
   const { name, email, password, confirmPassword } = req.body;
   if (password !== confirmPassword)

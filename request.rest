@@ -2,6 +2,26 @@ GET http://localhost:5000/users
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsIm5hbWUiOiJyb25pIiwiZW1haWwiOiJyb25pQGdtYWlsLmNvbSIsImlhdCI6MTY4MDA3NDUwMiwiZXhwIjoxNjgwMDc0NTIyfQ.cLegCtlzrkzg3XJ3tn37UIgond4fZxRGNdFAW53obkw
 
 ###
+GET http://localhost:5000/users/8
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjcsIm5hbWUiOiJhbnRvbiIsImVtYWlsIjoiYW50b25AZ21haWwuY29tIiwiaWF0IjoxNjgwOTI3NzI0LCJleHAiOjE2ODA5Mjc3NDR9.b3ybHcRpE9oLG0GMhc4aeseUldzT9Ck7qg7lDyo-Wds
+
+###
+POST  http://localhost:5000/users/8
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjgsIm5hbWUiOiJhbnRvbiIsImVtYWlsIjoiYW50b25AZ21haWwuY29tIiwiaWF0IjoxNjgwOTI3OTYxLCJleHAiOjE2ODA5Mjc5ODF9.6H-eHpo2BlWKKelP3766_7MbaHZiojR2LTFBEIs3vSs
+Content-Type: application/json
+
+{
+"name": "anton",
+"email": "anton@gamil.com",
+"phone_number": "087654321234"
+}
+
+###
+DELETE http://localhost:5000/users/7
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjcsIm5hbWUiOiJhbnRvbiIsImVtYWlsIjoiYW50b25AZ21haWwuY29tIiwiaWF0IjoxNjgwOTI3ODAwLCJleHAiOjE2ODA5Mjc4MjB9.NvW_5Qlc3aY4VU_zwsSqa7IAFB_YeM7pb-Qs2X5bKa4
+
+
+###
 POST  http://localhost:5000/users
 Content-Type: application/json
 
@@ -17,12 +37,14 @@ POST  http://localhost:5000/login
 Content-Type: application/json
 
 {
-    "email" : "roni@gmail.com",
-    "password": "654321"
+    "email" : "anton@gmail.com",
+    "password": "1234567"
 }
 
 ###
 GET http://localhost:5000/token
+
+
 
 ###
 DELETE  http://localhost:5000/logout
