@@ -14,7 +14,7 @@ export const getUsers = async (req, res) => {
   }
 };
 
-export const getUserId = async (req, res) => {
+export const getUserById = async (req, res) => {
   try {
     const response = await Users.findOne({
       where: {
@@ -24,6 +24,53 @@ export const getUserId = async (req, res) => {
     res.status(200).json(response);
   } catch (error) {
     res.status(500), json({ msg: error.users });
+  }
+};
+
+// Function Update
+export const updateUserById = async (req, res) => {
+  const user = await Users.findOne({
+    where: {
+      id: req.params.id,
+    },
+  });
+  if (!user) return res.status(404).json({ msg: "User Not Found" });
+  const { name, email, phone_number } = req.body;
+  try {
+    await Users.update(
+      {
+        name: name,
+        email: email,
+        phone_number: phone_number,
+      },
+      {
+        where: {
+          id: user.id,
+        },
+      }
+    );
+    res.status(200).json({ msg: "User Upadeted" });
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const deleteUser = async (req, res) => {
+  const user = await Users.findOne({
+    where: {
+      id: req.params.id,
+    },
+  });
+  if (!user) return res.status(404).json({ msg: "User Not Found" });
+  try {
+    await Users.destroy({
+      where: {
+        id: user.id,
+      },
+    });
+    res.status(200).json({ msg: "User Deleted" });
+  } catch (error) {
+    console.log(error);
   }
 };
 
