@@ -27,7 +27,7 @@ export const getUserById = async (req, res) => {
   }
 };
 
-export const updateUserId = async (req, res) => {
+export const updateUserById = async (req, res) => {
   const user = await Users.findOne({
     where: {
       id: req.params.id,
