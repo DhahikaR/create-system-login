@@ -36,7 +36,7 @@ Start the server
 
 ## API Reference
 
-Here are some main api usage, more details can be found in [routes](https://github.com/DhahikaR/create-system-login/blob/main/routes/index.js)
+Here are some main api usage, more details can be found in [routes](https://github.com/DhahikaR/create-system-login/blob/main/src/routes/index.js)
 
 #### POST /register
 
