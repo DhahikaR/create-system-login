@@ -6,7 +6,7 @@ GET http://localhost:5000/users/5
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsIm5hbWUiOiJyb25pIiwiZW1haWwiOiJyb25pQGdtYWlsLmNvbSIsImlhdCI6MTY4MDkzMDQ1MSwiZXhwIjoxNjgwOTMwNDcxfQ.v0FGeaUAQqsvZqMgzoNcACswNRflhxzlWUfuqvB2zh4
 
 ###
-POST  http://localhost:5000/users/8
+PATCH http://localhost:5000/users/8
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjgsIm5hbWUiOiJhbnRvbiIsImVtYWlsIjoiYW50b25AZ21haWwuY29tIiwiaWF0IjoxNjgwOTI3OTYxLCJleHAiOjE2ODA5Mjc5ODF9.6H-eHpo2BlWKKelP3766_7MbaHZiojR2LTFBEIs3vSs
 Content-Type: application/json
 

@@ -49,7 +49,7 @@ export const updateUserById = async (req, res) => {
         },
       }
     );
-    res.status(200).json({ msg: "User Upadeted" });
+    res.status(200).json({ name, email, phone_number });
   } catch (error) {
     console.log(error);
   }
@@ -110,7 +110,7 @@ export const Login = async (req, res) => {
       { userId, name, email },
       process.env.ACCESS_TOKEN_SECRET,
       {
-        expiresIn: "20s",
+        expiresIn: "60s",
       }
     );
     const refreshToken = jwt.sign(
