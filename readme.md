@@ -1,6 +1,6 @@
 # Node Js JWT Auth Backend
 
-A REST API jwt authentication backend using nodejs and express. This code uses Sequelize as a database. Docker is supported.
+A REST API jwt authentication backend using nodejs and express. This code uses Sequelize as a database.
 
 Use two collections, one for users and another for tokens. Token refreshing is supported, expired token will be discarded using cookie.
 
